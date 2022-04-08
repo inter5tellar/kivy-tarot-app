@@ -1,0 +1,117 @@
+#TODO Round entire window
+
+<Tarot>:
+    name: name # Global variables
+    pw: pw
+
+    canvas:
+        Color:
+            rgb: [1.0, .718, .773]
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        id: 'name'
+        text: "Name"
+        size_hint: [None, None]
+        size: [75, 30]
+        pos: [5, 400]
+        color: 0, 0, 0, 1
+
+    TextInput:
+        id: name
+        size_hint: (None, None)
+        size: [150, 30]
+        pos: [85, 400]
+
+    Label:
+        text: "Password"
+        size_hint: [None, None]
+        size: [75, 30]
+        pos: [240, 400]
+        color: 0, 0, 0, 1
+
+    TextInput:
+        id: pw
+        size_hint: (None, None)
+        size: 150, 30
+        pos: [320,400]
+
+    Button:
+        text: "Log in"
+        size_hint: [None, None]
+        size: [125, 35]
+        pos: [495, 398]
+        color: 0, 0, 0, 1
+        background_normal: 'SakuraButton.jpg'
+        on_press: root.login_button()
+
+    Button:
+        text: "Journal"
+        size_hint: [None, None]
+        size: [125, 35]
+        pos: [495, 350]
+        color: 0, 0, 0, 1
+        background_normal: 'SakuraButton.jpg'
+        on_press: root.view_journal()
+
+    Image:
+        id: 'card2'
+        size_hint: [None, None]
+        size: [150, 300]
+        pos: [50, 60]
+        source: root.image_location2
+
+    Image:
+        id: 'card1'
+        size_hint: [None, None]
+        size: [150, 300]
+        pos: [250, 60]
+        source: root.image_location
+
+    Image:
+        id: 'card3'
+        size_hint: [None, None]
+        size: [150, 300]
+        pos: [450, 60]
+        source: root.image_location3
+
+    Label:
+        size_hint: [None, None]
+        size: [150, 30]
+        pos: [50,80]
+        color: 0, 0, 0, 1
+        text: root.card_name2
+
+    Label:
+        size_hint: [None, None]
+        size: [150, 30]
+        pos: [252,80]
+        color: 0, 0, 0, 1
+        text: root.card_name
+
+    Label:
+        size_hint: [None, None]
+        size: [150, 30]
+        pos: [452,80]
+        color: 0, 0, 0, 1
+        text: root.card_name3
+
+    Button:
+        text: "Draw 1"
+        size_hint: [None, None]
+        size: [125, 40]
+        pos: [150, 25]
+        color: 0, 0, 0, 1
+        background_normal: 'SakuraButton.jpg'
+        on_press: root.draw_card(1)
+
+    Button:
+        text: "Draw 3"
+        size_hint: [None, None]
+        size: [125, 40]
+        pos: [350, 25]
+        color: 0, 0, 0, 1
+        background_normal: 'SakuraButton.jpg'
+        on_press: root.draw_card(3)
